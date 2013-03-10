@@ -22,4 +22,4 @@ output:
 	mkdir -p output
 
 clean:
-	- rm -f output/*
+	- rm -f output/*.html
