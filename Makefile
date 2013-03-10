@@ -1,5 +1,5 @@
-IN_MD=$(wildcard *.md)
-OUT_HTML=$(IN_MD:%.md=output/%.html)
+IN_MD=$(wildcard input/*.md)
+OUT_HTML=$(IN_MD:input/%.md=output/%.html)
 
 .PHONY: all deploy clean
 
@@ -12,7 +12,7 @@ output/%.html: %.html
 	cat btm.template >> $@
 	rm $<
 
-%.html: %.md
+%.html: input/%.md
 	pandoc --from markdown --to html --standalone $< --output $@
 
 deploy: all
